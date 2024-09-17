@@ -29,5 +29,5 @@ resource "aws_ecs_service" "main" {
       desired_count
     ]
   }
-  depends_on = [ ]
+  depends_on = []
 }
