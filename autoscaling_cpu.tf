@@ -36,7 +36,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_high" {
   threshold          = var.scale_out_cpu_threshold
 
   dimensions = {
-    clusterName = var.cluster_name
+    ClusterName = var.cluster_name
     ServiceName = var.service_name
   }
 
@@ -62,7 +62,7 @@ resource "aws_appautoscaling_policy" "cpu_low" {
     metric_aggregation_type = var.scale_in_statistic
 
     step_adjustment {
-      metric_interval_lower_bound = 0 #TO-DO
+      metric_interval_upper_bound = 0
       scaling_adjustment          = var.scale_in_adjustment
     }
 
@@ -94,7 +94,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_low" {
   threshold          = var.scale_in_cpu_threshold
 
   dimensions = {
-    clusterName = var.cluster_name
+    ClusterName = var.cluster_name
     ServiceName = var.service_name
   }
 
