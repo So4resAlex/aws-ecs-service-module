@@ -9,6 +9,11 @@ variable "cluster_name" {
 
 }
 
+variable "service_port" {
+  description = "Porta do servico"
+  type = number
+}
+
 variable "vpc_id" {
   description = "ID da VPC"
   type        = string
