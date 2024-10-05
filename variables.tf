@@ -39,3 +39,9 @@ variable "service_listener" {
   type        = string
 }
 
+variable "service_task_execution_role" {
+  description = "Task execution role"
+  type = string
+  
+}
+
