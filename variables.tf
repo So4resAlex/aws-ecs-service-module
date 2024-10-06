@@ -11,7 +11,7 @@ variable "cluster_name" {
 
 variable "service_port" {
   description = "Porta do servico"
-  type = number
+  type        = number
 }
 
 variable "vpc_id" {
@@ -41,15 +41,15 @@ variable "service_listener" {
 
 variable "service_task_execution_role" {
   description = "Task execution role"
-  type = string
+  type        = string
 }
 
 variable "environment_variables" {
   description = "Lista de variáveis de ambiente que serão passadas para o serviço."
-  type = list(any)
+  type        = list(any)
 }
 
 variable "capabilities" {
   description = "Lista de capacidades necessárias para a execução do serviço, como 'CAP_SYS_ADMIN' para recursos Linux específicos."
-  type = list(any)
+  type        = list(any)
 }
