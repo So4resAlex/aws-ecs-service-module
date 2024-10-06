@@ -47,6 +47,11 @@ variable "service_task_execution_role" {
   type        = string
 }
 
+variable "service_healthcheck" {
+  type        = map(any)
+  description = "Configuração do health check do serviço, incluindo caminho e protocolo."
+}
+
 variable "environment_variables" {
   description = "Lista de variáveis de ambiente que serão passadas para o serviço."
   type        = list(any)
