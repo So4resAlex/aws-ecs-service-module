@@ -42,6 +42,11 @@ variable "service_listener" {
 variable "service_task_execution_role" {
   description = "Task execution role"
   type = string
+}
+
+variable "environment_variables" {
+  description = "Variaveis de ambiente"
+  type = list(any)
   
 }
 
