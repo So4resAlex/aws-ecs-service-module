@@ -45,8 +45,11 @@ variable "service_task_execution_role" {
 }
 
 variable "environment_variables" {
-  description = "Variaveis de ambiente"
+  description = "Lista de variáveis de ambiente que serão passadas para o serviço."
   type = list(any)
-  
 }
 
+variable "capabilities" {
+  description = "Lista de capacidades necessárias para a execução do serviço, como 'CAP_SYS_ADMIN' para recursos Linux específicos."
+  type = list(any)
+}
