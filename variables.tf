@@ -1,3 +1,6 @@
+variable "region" {
+  description = "Regiao onde os recursos serão criados"
+}
 variable "service_name" {
   description = "Nome do serviço"
   type        = string
