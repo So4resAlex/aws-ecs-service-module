@@ -57,6 +57,11 @@ variable "service_task_count" {
   description = "Número de instâncias da tarefa a serem executadas simultaneamente no serviço."
 }
 
+variable "service_hosts" {
+  type        = list(string)
+  description = "Lista de hosts associados ao serviço, geralmente especificados para configurações DNS."
+}
+
 variable "service_healthcheck" {
   type        = map(any)
   description = "Configuração do health check do serviço, incluindo caminho e protocolo."
