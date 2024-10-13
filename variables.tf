@@ -76,3 +76,22 @@ variable "capabilities" {
   description = "Lista de capacidades necessárias para a execução do serviço, como 'CAP_SYS_ADMIN' para recursos Linux específicos."
   type        = list(any)
 }
+
+variable "scale_type" {
+  type        = string
+  description = "Tipo de escalabilidade, como 'cpu', 'cpu_tracking' ou 'request_tracking'"
+  default     = null
+}
+
+variable "task_maximum" {
+  type        = number
+  description = "Número maximo de tarefas que podem ser executadas pelo serviço"
+  default     = 10
+
+}
+variable "task_minimum" {
+  type        = number
+  description = "Número minimo de tarefas que podem ser executadas pelo serviço"
+  default     = 2
+}
+
