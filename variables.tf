@@ -99,7 +99,7 @@ variable "task_minimum" {
 
 variable "scale_out_cpu_threshold" {
   type        = number
-  description = "Valor de mimite de utilização de cpu que, quando ultrapassado, aciona uma ação de escla para cima, em percentual"
+  description = "Valor de limite de utilização de cpu que, quando ultrapassado, aciona uma ação de escla para cima, em percentual"
   default     = 80
 }
 
@@ -129,13 +129,55 @@ variable "scale_out_period" {
 
 variable "scale_out_evaluation_period" {
   type        = number
-  description = "Numero de periodos de avalacianção necessarios para acionar uma escla para cima"
+  description = "Numero de periodos de avaliação necessarios para acionar uma escla para cima"
   default     = 2
 }
 
 variable "scale_out_cooldown" {
   type        = number
   description = "Periodo de espera para reavaliar as metricas após uma ação de escalar para cima"
+  default     = 60
+}
+
+variable "scale_in_cpu_threshold" {
+  type        = number
+  description = "Valor de limite de utilização de cpu que, quando menor, aciona uma ação de escla para baixo, em percentual"
+  default     = 80
+}
+
+variable "scale_in_adjustment" {
+  type        = number
+  description = "Quantade de tasks a remover quando há a ação de escalar pra baixo"
+  default     = 1
+}
+
+variable "scale_in_comparison_operator" {
+  type        = string
+  description = "Operador de comparação usado para a condição de escala para baixo, como 'GreaterThanOrEqualToThreshold'"
+  default     = "GreaterThanOrEqualToThreshold"
+}
+
+variable "scale_in_statistic" {
+  type        = string
+  description = "Estatistica usada para a condição de escala pra baixo, como Average ou Sum"
+  default     = "Averege"
+}
+
+variable "scale_in_period" {
+  type        = number
+  description = "Duração do periodo de avaliação de escala para baixo, em segundos"
+  default     = 2
+}
+
+variable "scale_in_evaluation_period" {
+  type        = number
+  description = "Numero de periodos de avaliação necessarios para acionar uma escla para baixo"
+  default     = 2
+}
+
+variable "scale_in_cooldown" {
+  type        = number
+  description = "Periodo de espera para reavaliar as metricas após uma ação de escalar para baixo"
   default     = 60
 }
 
