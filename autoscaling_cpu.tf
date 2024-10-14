@@ -85,9 +85,9 @@ resource "aws_appautoscaling_policy" "cpu_low" {
 resource "aws_cloudwatch_metric_alarm" "cpu_low" {
   count = var.scale_type == "cpu" ? 1 : 0
 
-  alarm_name = format("%s-%s-cpu-scale-out", var.cluster_name, var.service_name)
+  alarm_name = format("%s-%s-cpu-scale-in", var.cluster_name, var.service_name)
 
-  comparison_operator = var.scale_out_comparison_operator
+  comparison_operator = var.scale_in_comparison_operator
 
   metric_name = "CPUUtilization"
   namespace   = "AWS/ECS"
