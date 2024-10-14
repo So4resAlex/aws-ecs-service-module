@@ -153,7 +153,7 @@ variable "scale_in_adjustment" {
 
 variable "scale_in_comparison_operator" {
   type        = string
-  description = "Operador de comparação usado para a condição de escala para baixo, como 'GreaterThanOrEqualToThreshold'"
+  description = "Operador de comparação usado para a condição de escala para baixo, como 'LessThanOrEqualToThreshold'"
   default     = "GreaterThanOrEqualToThreshold"
 }
 
