@@ -188,4 +188,17 @@ variable "scale_tracking_cpu" {
   default = 80
 }
 
+### Auto Scaling de Request tracking
+variable "alb_arn" {
+  type = string
+  description = "ARN do Application Load Balancer usado para rastreamento de solicitaçẽos"
+  default = null
+}
+
+variable "scale_tracking_requests" {
+  type = number
+  description = "Número alvo de solicitaçãos por segundo para rastreamento de escala"
+  default = 0
+}
+
 
