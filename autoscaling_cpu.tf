@@ -91,7 +91,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_low" {
 
   metric_name = "CPUUtilization"
   namespace   = "AWS/ECS"
-  statistic   = var.scale_out_statistic
+  statistic   = var.scale_in_statistic
 
   period             = var.scale_in_period
   evaluation_periods = var.scale_in_evaluation_period
