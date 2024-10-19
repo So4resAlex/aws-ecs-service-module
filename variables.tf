@@ -181,4 +181,11 @@ variable "scale_in_cooldown" {
   default     = 60
 }
 
+###Auto Scaling de Target Tracking CPU
+variable "scale_tracking_cpu" {
+  type = number
+  description = "Valor de utilização de CPU alvo para o rastreamento de escala, em percentual."
+  default = 80
+}
+
 
