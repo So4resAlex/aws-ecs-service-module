@@ -183,22 +183,22 @@ variable "scale_in_cooldown" {
 
 ###Auto Scaling de Target Tracking CPU
 variable "scale_tracking_cpu" {
-  type = number
+  type        = number
   description = "Valor de utilização de CPU alvo para o rastreamento de escala, em percentual."
-  default = 80
+  default     = 80
 }
 
 ### Auto Scaling de Request tracking
 variable "alb_arn" {
-  type = string
+  type        = string
   description = "ARN do Application Load Balancer usado para rastreamento de solicitaçẽos"
-  default = null
+  default     = null
 }
 
 variable "scale_tracking_requests" {
-  type = number
+  type        = number
   description = "Número alvo de solicitaçãos por segundo para rastreamento de escala"
-  default = 0
+  default     = 0
 }
 
 
