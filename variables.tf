@@ -47,9 +47,21 @@ variable "service_task_execution_role" {
   type        = string
 }
 
+# variable "service_launch_type" {
+#   type        = string
+#   description = "Tipo de lançamento para o serviço no ECS, como 'FARGATE' ou 'EC2'."
+# }
+
 variable "service_launch_type" {
-  type        = string
-  description = "Tipo de lançamento para o serviço no ECS, como 'FARGATE' ou 'EC2'."
+  type = list(object({
+    capacity_provider = string
+    weight            = number
+  }))
+  default = [ {
+    capacity_provider = "SPOT"
+    weight = 100
+  } ]
+
 }
 
 variable "service_task_count" {

@@ -15,10 +15,14 @@ resource "aws_ecs_service" "main" {
     rollback = true
   }
 
-  capacity_provider_strategy {
-    capacity_provider = var.service_launch_type
-    weight            = 100
+dynamic "capacity_provider_strategy" {
+  for_each = var.service_launch_type
+
+  content {
+    capacity_provider = capacity_provider_strategy.value.capacity_provider
+    weight = capacity_provider_strategy.value.capacity_provider
   }
+}
 
   dynamic "ordered_placement_strategy" {
     for_each = var.service_launch_type == "EC2" ? [1] : []
